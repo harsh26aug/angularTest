@@ -1,0 +1,14 @@
+[  
+    {  
+      "id": 1,
+      "name": "Cup Ice Cream",
+      "color": "#9db6de",
+      "price": 30
+    },  
+    {  
+      "id": 2,
+      "name": "Corn Ice Cream",
+      "color": "#da9dde",
+      "price": 15
+    }
+  ]  

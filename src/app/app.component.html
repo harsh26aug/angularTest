@@ -1,0 +1,40 @@
+<div class="container">
+  <mat-radio-group (change)="onListSelected($event)" class="mat-radio-group">
+    <mat-radio-button [value]="false" [checked]="!selectedView">Grid</mat-radio-button>
+    <mat-radio-button [value]="true" [checked]="selectedView">List</mat-radio-button>
+  </mat-radio-group> 
+
+  <mat-grid-list cols="3" rowHeight="2:1" *ngIf="!selectedView">
+    <mat-grid-tile *ngFor="let item of products" [style.background-color]="item.color" >
+      <div class="product">
+        <p><span>Product: {{item.name}}</span></p>
+        <p><span>Price: {{item.price}}</span></p>
+        <p><span>Available Qty: {{totalQty(item)}}</span></p>
+        <p><mat-icon>add_shopping_cart</mat-icon></p>
+        <p class="cart">
+          <button mat-button color="primary" (click)="addQty(item)"><mat-icon>add_circle_outline</mat-icon></button>
+          <span>Qty: {{(item.addedQty) ? item.addedQty : 0}}</span>
+          <button (click)="removeQty(item)"><mat-icon>remove_circle_outline</mat-icon></button>
+        </p>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-list *ngIf="selectedView">
+    <mat-list-item *ngFor="let item of products" [style.background-color]="item.color">
+      <div class="product-list">
+        <p><span>Product: {{item.name}}</span></p>
+        <p><span>Price: {{item.price}}</span></p>
+        <p><span>Available Qty: {{totalQty(item)}}</span></p>
+        <p><mat-icon>add_shopping_cart</mat-icon></p>
+        <p class="cart">
+          <button mat-button color="primary" (click)="addQty(item)"><mat-icon>add_circle_outline</mat-icon></button>
+          <span>Qty: {{(item.addedQty) ? item.addedQty : 0}}</span>
+          <button (click)="removeQty(item)"><mat-icon>remove_circle_outline</mat-icon></button>
+        </p>
+      </div>
+    </mat-list-item>
+  </mat-list>
+
+  Total Amount: {{totalAmount}}
+</div>

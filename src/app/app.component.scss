@@ -1,0 +1,35 @@
+.container{
+    margin: 50px;
+
+    .mat-radio-button{
+        margin: 15px 15px 15px 0;
+    }
+    
+    .mat-grid-tile{
+        .mat-figure{
+            flex-flow: wrap;
+        }
+        p{
+            width: 100%;
+            text-align: center;
+            margin: 10px;
+        }     
+        span{
+            margin: 15px;;
+        }   
+    }
+    .product{
+        display: grid;
+    }
+
+    .product-list{
+        display: contents;
+        p{
+            width: 15%;
+            margin: 10px;
+        }
+        span{
+            margin: 15px;;
+        }
+    }
+}
